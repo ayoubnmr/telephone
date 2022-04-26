@@ -1,0 +1,18 @@
+<p>
+<%=@tele.id    %><br/>
+<%=@tele.name  %><br/>
+<%=@tele.number%><br/>
+</p>
+<ul>
+<li><%=link_to "edit",   edit_phonenum_path(@tele) %></li>
+<li><%=link_to "delete", phonenum_path(@tele), data: {
+                     turbo_method: :delete,
+                     turbo_confirm: "are you sure?" 
+                     }%>
+</li>
+</ul>
+
+
+<%=render @tele.infos%>
+
+<%=render 'infos/form'%>

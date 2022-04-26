@@ -1,0 +1,13 @@
+<% unless info.archived? %>
+
+<p><%=info.addres%></p>
+<p><%=info.dob   %></p>
+
+
+<p>
+  <%= link_to "delete", [info.phonenum, info], data: {
+                turbo_method: :delete,
+                turbo_confirm: "Are you sure?"
+              } %>
+</p>
+<%end%>

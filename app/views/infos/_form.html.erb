@@ -1,0 +1,19 @@
+<%=form_with model: [@tele, @tele.infos.build] do |form|%>
+    <p>
+    <%=form.label      :addres%>    <br/>
+    <%=form.text_field :addres %>
+    </p>
+    <p>
+    <%=form.label     :dob%>        <br/>
+    <%=form.text_area :dob%>
+    </p>
+    <p>
+    <%=form.submit%>
+    </p>
+
+
+<div>
+  <%= form.label :status %><br>
+  <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+</div>
+<%end%>

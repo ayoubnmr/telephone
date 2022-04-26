@@ -1,0 +1,25 @@
+<h1>Phonenums</h1>
+
+<p>
+<%@tele.each do |tele|%>
+    <li>
+     <%=tele.name%>
+    </li>
+     <%end%>
+</p>
+
+<h1>Phonenums</h1>
+
+Our blog has <%= Phonenum.public_count %> Infos and counting!
+
+<p>
+<%@tele.each do |tele|%>
+
+<% unless tele.archived? %>
+    <li>
+      <%=link_to tele.name, tele%>
+    </li>
+      <%end%>
+</p>
+<%end%>
+<h2><%=link_to "new Phonenum",new_phonenum_path%></h2>

@@ -1,0 +1,25 @@
+<%=form_with model: tele do |form|%>
+    <div>
+     <%=form.label :name%><br/>
+     <%=form.text_field :name%>
+     <%tele.errors.full_messages_for(:name).each do |message|%>
+        <div><%=message%></div>
+     <%end%>
+    </div> 
+    <div>
+     <%=form.label      :number%><br/>
+     <%=form.text_area :number%>
+     <%tele.errors.full_messages_for(:number).each do |message|%>
+     <div><%=message%></div>
+     <%end%>
+    </div>
+    <div>
+     <%=form.submit%> 
+    </div>   
+    
+    <p>
+     <%= form.label :status %><br>
+    <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+    </p>
+     <%end%>
+
